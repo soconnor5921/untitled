@@ -1,6 +1,6 @@
 public class APCalendar
 {
-    private static boolean isLeapYear(int year)
+    private boolean isLeapYear(int year)
     {
         if(year % 4 == 0)
         {
@@ -9,7 +9,7 @@ public class APCalendar
         return false;
     }
 
-    public static int numberOfLeapYears(int year1, int year2)
+    public int numberOfLeapYears(int year1, int year2)
     {
         int count = 0;
         for(int i = year1; i <= year2; i++)
@@ -22,17 +22,58 @@ public class APCalendar
         return count;
     }
 
-    private static int firstDayOfYear(int year)
+    private int firstDayOfYear(int year)
     {
         return 4;
     }
 
-    private static int dayOfYear(int month, int day, int year)
+    private int dayOfYear(int month, int day, int year)
     {
-        return 50;
+        if(month == 0)
+        {
+            return day;
+        }
+        int count = 0;
+        for(int i = 0; i < month; i++)
+        {
+            if(i == 1)
+            {
+                if(isLeapYear(year))
+                {
+                    count += 29;
+                }
+                else
+                {
+                    count += 28;
+                }
+            }
+            if(i < 7)
+            {
+                if(i % 2 == 0)
+                {
+                    count += 30;
+                }
+                else
+                {
+                    count += 31;
+                }
+            }
+            else
+            {
+                if(i % 2 != 0)
+                {
+                    count += 30;
+                }
+                else
+                {
+                    count += 31;
+                }
+            }
+        }
+        return count + day;
     }
 
-    public static int dayOfWeek(int month, int day, int year)
+    public int dayOfWeek(int month, int day, int year)
     {/*
         int weekDay = firstDayOfYear(year);
         int dayOfYear = dayOfYear(month, day, year);

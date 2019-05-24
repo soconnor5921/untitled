@@ -7,6 +7,7 @@ public class Runner
         System.out.println("QUESTION 1");
         APCalendar cal = new APCalendar();
         System.out.println(cal.numberOfLeapYears(2007, 2012));
+        System.out.println(cal.dayOfWeek(5,24,2019));
 
         //QUESTION 2
         System.out.println("\n" + "QUESTION 2");
