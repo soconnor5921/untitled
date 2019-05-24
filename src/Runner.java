@@ -5,6 +5,8 @@ public class Runner
     public static void main(String[] args) {
         //QUESTION 1
         System.out.println("QUESTION 1");
+        APCalendar cal = new APCalendar();
+        System.out.println(cal.numberOfLeapYears(2007, 2012));
 
         //QUESTION 2
         System.out.println("\n" + "QUESTION 2");

@@ -2,13 +2,17 @@ public class APCalendar
 {
     private static boolean isLeapYear(int year)
     {
-        return true;
+        if(year % 4 == 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     public static int numberOfLeapYears(int year1, int year2)
     {
         int count = 0;
-        for(int i = year1; i < year2; i++)
+        for(int i = year1; i <= year2; i++)
         {
             if(isLeapYear(i))
             {
