@@ -29,11 +29,15 @@ public class StepTracker
 
     public double averageSteps()
     {
-        double count = 0;
-        for(int i = 0; i < days.size(); i++)
+        if(days.size() > 0)
         {
-            count += days.get(i);
+            double count = 0;
+            for(int i = 0; i < days.size(); i++)
+            {
+                count += days.get(i);
+            }
+            return count/days.size();
         }
-        return count/days.size();
+        return 0;
     }
 }
